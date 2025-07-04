@@ -1,0 +1,8 @@
+theme = catppuccin-macchiato
+font-family = VictorMono NF
+font-size = 20
+background-opacity = 0.8
+background-blur = true
+macos-icon=holographic
+bold-is-bright=true
+split-divider-color=#c6a0f6

@@ -3,7 +3,7 @@ return {
   dependencies = { { "echasnovski/mini.icons", opts = {} } },
   lazy = false,
   opts = {
-    columns= {
+    columns = {
       "icon",
     },
     view_options = {

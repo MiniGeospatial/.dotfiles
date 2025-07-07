@@ -39,12 +39,14 @@ vim.keymap.set("n", "<leader><leader>e", "<CMD>Smoji<CR>")
 
 vim.keymap.set("n", "<leader>ng", "<CMD>Neogit<CR>")
 
+vim.keymap.set('n', '<leader>ff', '<cmd>Telescope find_files<cr>', {})
 vim.keymap.set('n', '<leader>fg', '<cmd>Telescope git_files<cr>', {})
 vim.keymap.set('n', '<leader>fb', '<cmd>Telescope buffers<cr>', {})
 vim.keymap.set('n', '<leader>fz', '<cmd>Telescope live_grep<cr>', {})
 vim.keymap.set('n', '<leader>fr', '<cmd>Telescope lsp_references<cr>', {})
 
 vim.lsp.config('ruff', {
+
   init_options = {
     settings = {
     }

@@ -1,4 +1,8 @@
-require("catppuccin").setup({
+return { 
+  "catppuccin/nvim",
+  name = "catppuccin",
+  priority = 1000,
+  opts = {
     transparent_background = true, -- disables setting the background color.
     dim_inactive = {
         enabled = true, -- dims the background color of inactive window
@@ -25,6 +29,6 @@ require("catppuccin").setup({
       },
       mason = true
     },
-})
+  }
+}
 
-vim.cmd[[colorscheme catppuccin-Macchiato]]

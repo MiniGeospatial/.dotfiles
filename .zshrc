@@ -49,6 +49,7 @@ zstyle ':fzf-tab:*' switch-group '<' '>'
 
 eval "$(zoxide init zsh --cmd cd)"
 eval "$(fzf --zsh)"
+eval "$(uv generate-shell-completion zsh)"
 
 alias vi="nvim"
 

@@ -54,6 +54,7 @@ eval "$(uv generate-shell-completion zsh)"
 alias vi="nvim"
 alias ls="eza"
 alias ll="eza -l"
+alias cat="bat"
 
 bindkey '^[[A' up-line-or-search
 bindkey '^[[B' down-line-or-search

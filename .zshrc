@@ -8,6 +8,7 @@ source "${ZINIT_HOME}/zinit.zsh"
 zinit light zdharma-continuum/fast-syntax-highlighting
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions
+zinit wait lucid for MichaelAquilina/zsh-autoswitch-virtualenv
 
 zinit snippet OMZP::git
 zinit snippet OMZP::sudo
@@ -55,6 +56,7 @@ alias vi="nvim"
 alias ls="eza"
 alias ll="eza -l"
 alias cat="bat"
+alias python="uv run python3"
 
 bindkey '^[[A' up-line-or-search
 bindkey '^[[B' down-line-or-search

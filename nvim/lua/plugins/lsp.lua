@@ -1,5 +1,6 @@
 return {
   'neovim/nvim-lspconfig',
+  version = "*",
   dependancies = {
     "folke/lazydev.nvim",
     ft = "lua", -- only load on lua files

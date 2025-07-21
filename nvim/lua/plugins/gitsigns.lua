@@ -1,7 +1,8 @@
 return {
-	'lewis6991/gitsigns.nvim',
-	lazy= false,
-	opts = {
-		current_line_blame = true,
-	}
+  'lewis6991/gitsigns.nvim',
+  lazy = false,
+  version = "*",
+  opts = {
+    current_line_blame = true,
+  }
 }

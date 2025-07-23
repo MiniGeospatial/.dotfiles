@@ -1,19 +1,20 @@
-return { 
+return {
   "catppuccin/nvim",
   name = "catppuccin",
   priority = 1000,
+  version = "*",
   opts = {
     transparent_background = true, -- disables setting the background color.
     dim_inactive = {
-        enabled = true, -- dims the background color of inactive window
-        shade = "dark",
-        percentage = 0.08, -- percentage of the shade to apply to the inactive window
+      enabled = true,              -- dims the background color of inactive window
+      shade = "dark",
+      percentage = 0.08,           -- percentage of the shade to apply to the inactive window
     },
     show_end_of_buffer = true,
     highlight_overrides = {
       all = function(colors)
         return {
-          CursorLineNr = { 
+          CursorLineNr = {
             fg = colors.peach,
           }
         }
@@ -23,7 +24,7 @@ return {
       gitsigns = true,
       telescope = true,
       neogit = true,
-      nvim_surround=true,
+      nvim_surround = true,
       telescope = {
         enabled = true,
       },
@@ -31,4 +32,3 @@ return {
     },
   }
 }
-

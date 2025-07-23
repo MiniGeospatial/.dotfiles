@@ -1,5 +1,6 @@
 return {
   'stevearc/oil.nvim',
+  version = "*",
   dependencies = { { "echasnovski/mini.icons", opts = {} } },
   lazy = false,
   opts = {

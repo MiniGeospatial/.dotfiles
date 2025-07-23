@@ -1,5 +1,6 @@
 return {
   "zakissimo/smoji.nvim",
+  version = "*",
   dependencies = { "stevearc/dressing.nvim" },
   cmd = "Smoji",
   keys = {

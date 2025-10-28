@@ -1,19 +1,13 @@
-.prompt "󰇥 " "󰇥." 
+.prompt "󰇥 " "󰇥. " 
 
 INSTALL spatial;
+INSTALL httpfs;
+
 LOAD spatial;
+LOAD httpfs;
 
--- INSTALL httpfs;
--- LOAD httpfs;
-
--- INSTALL aws;
--- LOAD aws;
-
--- CREATE SECRET s3 (
---   TYPE S3,
---   PROVIDER CREDENTIAL_CHAIN,
---   CHAIN 'config',
---   REGION 'eu-west-1'
--- );
--- 
-
+CREATE SECRET s3 (
+  TYPE s3,
+  PROVIDER credential_chain,
+  REGION 'eu-west-2'
+);

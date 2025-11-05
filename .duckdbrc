@@ -1,4 +1,4 @@
-.prompt "󰇥 " "󰇥. " 
+.prompt "󰇥 " "󰇥." 
 
 INSTALL spatial;
 INSTALL httpfs;

@@ -1,6 +1,5 @@
 return {
-  "catppuccin/nvim",
-  name = "catppuccin",
+  "folke/tokyonight.nvim",
   priority = 1000,
   version = "*",
   opts = {

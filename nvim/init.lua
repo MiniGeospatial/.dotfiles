@@ -32,7 +32,7 @@ vim.keymap.set('v', '<leader>Y', "\"+Y")
 
 require("config.lazy")
 
-vim.cmd.colorscheme "catppuccin"
+vim.cmd.colorscheme "tokyonight-storm"
 
 vim.keymap.set("n", "-", "<CMD>Oil --float<CR>", { desc = "Open parent directory" })
 vim.keymap.set("n", "<leader><leader>e", "<CMD>Smoji<CR>")

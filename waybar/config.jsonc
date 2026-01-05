@@ -1,0 +1,235 @@
+{
+    // -------------------------------------------------------------------------
+    // Global configuration
+    // -------------------------------------------------------------------------
+
+    "layer": "top",
+    "position": "top",
+    "height": 45,
+    "spacing": 5,
+
+    // "margin-left": 10,
+    // "margin-bottom": 0,
+    // "margin-right": 10,
+
+
+    "modules-left": [
+        "custom/power",
+        "hyprland/workspaces",
+        "custom/spotify"
+    ],
+
+    "modules-center": [
+        "clock",
+        "custom/weather"
+    ],
+
+    "modules-right": [
+        "cpu",
+        "memory",
+        "temperature",
+        "battery",
+        "wireplumber",
+        "bluetooth",
+        "network"
+        // "tray",
+    ],
+
+
+    // -------------------------------------------------------------------------
+    // Modules
+    // -------------------------------------------------------------------------
+
+
+    "temperature": {
+        // "thermal-zone": 1,
+        "interval": 4,
+        "hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
+        "critical-threshold": 80,
+        // "format-critical": " {temperatureC}°C",
+        "format-critical": "󰈸  {temperatureC}°C",
+        "format": "{icon}  {temperatureC}°C",
+        "format-icons": ["", "", ""],
+        "max-length": 7,
+        "min-length": 7,
+        "on-click": "xsensors"
+    },
+
+    "memory": {
+        "interval": 30,
+        "format": "  {used:0.2f} / {total:0.0f} GB",
+        "on-click": "ghostty -e btop"
+    },
+
+    "battery": {
+        "interval": 2,
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 10
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+
+    "network": {
+        "format-wifi": " ",
+        "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format": "",
+        "format-disconnected": "󱚼 ",
+        // "on-click": "wl-copy $(ip address show up scope global | grep inet | head -n1 | cut -d/ -f 1 | tr -d [:space:] | cut -c5-)",
+        "tooltip-format": " {bandwidthUpBits}  {bandwidthDownBits}\n{ifname}\n{ipaddr}/{cidr}\n",
+        "tooltip-format-wifi": " {essid} {frequency}MHz\nStrength: {signaldBm}dBm ({signalStrength}%)\nIP: {ipaddr}/{cidr}\n {bandwidthUpBits}  {bandwidthDownBits}",
+        "interval": 10
+    },
+
+    "custom/weather": {
+        "format": "{}",
+        "interval": 3600,
+        "exec": "curl -s 'https://wttr.in/?format=1'",
+        "exec-if": "ping wttr.in -c1"
+    },
+
+    "custom/spotify": {
+        "exec": "~/.config/waybar/mediaplayer.py --player spotify",
+        "format": "{}  ",
+        "return-type": "json",
+        "on-click": "playerctl play-pause",
+        "on-scroll-up": "playerctl next",
+        "on-scroll-down": "playerctl previous",
+        "max-length": 45
+    },
+
+    "custom/media": {
+        "format": "{0} {1}",
+        "return-type": "json",
+        "max-length": 40,
+        "format-icons": {
+            "spotify": "",
+            "default": "🎜"
+        },
+        "escape": true,
+        //"exec": "~/.config/waybar/mediaplayer.py" // Script in resources folder
+        // "exec": "~/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    },
+
+    "custom/power": {
+        "format": "󰐥 ",
+        "tooltip": false,
+        "on-click": "wlogout -b 4"
+    },
+
+    "clock": {
+        "format": "  {:%H:%M}",
+        "tooltip-format": "{:%d-%m-%Y}"
+        // "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        // "today-format": "<b><span color=\"red\">{}</span></b>",
+        // "calendar": {
+          // "mode": "month",
+          // "today": "<span color='#ffcc66><b><u>{}</b></u></span>'"
+        // }
+    },
+
+    "cpu": {
+        "interval": 1,
+        // "format": " {}%", // Icon: microchip
+        "format": "{max_frequency:.1f}GHz <span color=\"darkgray\">| {usage}%</span>",
+        "max-length": 13,
+        "min-length": 12
+    },
+
+
+    "hyprland/workspaces": {
+        "all-outputs": true,
+        "format": "{name}",
+        "format-icons": {
+            "1": "一",
+            "2": "二",
+            "3": "三",
+            "4": "四",
+            "5": "五",
+            "6": "六",
+            "7": "七",
+            "8": "八",
+            "9": "九",
+            "10": "十",
+        },
+        "on-scroll-up": "hyprctl dispatch workspace e+1 1>/dev/null",
+        "on-scroll-down": "hyprctl dispatch workspace e-1 1>/dev/null",
+        "sort-by-number": true,
+        "active-only": false,
+    },
+
+    "pulseaudio": {
+        "scroll-step": 3, // %, can be a float
+        "format": "{icon} {volume}% {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        //"format-source": "{volume}% ",
+        //"format-source-muted": "",
+        "format-source": "",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol",
+        "on-click-right": "amixer sset Master toggle"
+    },
+
+    "wireplumber": {
+        "on-click": "pavucontrol",
+        "on-click-right": "amixer sset Master toggle 1>/dev/null",
+        //on-click: "${wpctl} set-mute @DEFAULT_AUDIO_SINK@ toggle";
+        //on-scroll-down: "${wpctl} set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 0.04+";
+        //on-scroll-up: "${wpctl} set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 0.04-";
+        "format": "{icon} {volume}%",
+        "format-muted": " ",
+        "format-source": "",
+        "format-source-muted": "",
+        //"format-muted": "<span foreground='#fab387'> </span>",
+        //"format-icons": [ "<span foreground='#fab387'></span>" ]
+        "format-icons": {
+            "headphone": " ",
+            "hands-free": " ",
+            "headset": " ",
+            "phone": " ",
+            "portable": " ",
+            "car": " ",
+            "default": [" ", " ", " "]
+        },
+    },
+
+    "tray": {
+        "icon-size": 15,
+        "spacing": 5
+    },
+
+    "bluetooth": {
+      "format-on": "󰂯",
+      "format-off": "󰂲 ",
+      "format-connected": " {device_alias}",
+      "format-connected-battery": " {device_alias} ({device_battery_percentage}%)",
+      // "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
+      "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+      "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+      "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+      "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+      "on-click": "ghostty -e bluetui"
+    }
+  }

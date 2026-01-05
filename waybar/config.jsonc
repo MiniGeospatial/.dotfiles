@@ -14,6 +14,7 @@
 
 
     "modules-left": [
+        "custom/power",
         "hyprland/workspaces",
         "custom/spotify"
     ],
@@ -24,15 +25,14 @@
     ],
 
     "modules-right": [
-        "network",
         "cpu",
         "memory",
         "temperature",
         "battery",
         "wireplumber",
         "bluetooth",
+        "network"
         // "tray",
-        "custom/power"
     ],
 
 
@@ -80,14 +80,12 @@
         ]
     },
     "network": {
-        "format-wifi": " {essid}",
+        "format-wifi": " ",
         "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
         "format-linked": "{ifname} (No IP) ",
         "format": "",
-        "format-disconnected": "",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}",
-        "on-click": "wl-copy $(ip address show up scope global | grep inet | head -n1 | cut -d/ -f 1 | tr -d [:space:] | cut -c5-)",
-        "on-click-right": "wl-copy $(ip address show up scope global | grep inet6 | head -n1 | cut -d/ -f 1 | tr -d [:space:] | cut -c6-)",
+        "format-disconnected": "󱚼 ",
+        // "on-click": "wl-copy $(ip address show up scope global | grep inet | head -n1 | cut -d/ -f 1 | tr -d [:space:] | cut -c5-)",
         "tooltip-format": " {bandwidthUpBits}  {bandwidthDownBits}\n{ifname}\n{ipaddr}/{cidr}\n",
         "tooltip-format-wifi": " {essid} {frequency}MHz\nStrength: {signaldBm}dBm ({signalStrength}%)\nIP: {ipaddr}/{cidr}\n {bandwidthUpBits}  {bandwidthDownBits}",
         "interval": 10
@@ -129,9 +127,9 @@
     },
 
     "clock": {
-        "format": "  {:%H:%M   %e %b}",
+        "format": "  {:%H:%M}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "today-format": "<b>{}</b>"
+        "today-format": "<b><span color=\"red\">{}</span></b>"
     },
 
     "cpu": {
@@ -193,7 +191,7 @@
         //on-click: "${wpctl} set-mute @DEFAULT_AUDIO_SINK@ toggle";
         //on-scroll-down: "${wpctl} set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 0.04+";
         //on-scroll-up: "${wpctl} set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 0.04-";
-        "format": "<span foreground='#fab387'>{icon}</span>  {volume}%",
+        "format": "{icon} {volume}%",
         "format-muted": " ",
         "format-source": "",
         "format-source-muted": "",
@@ -216,13 +214,15 @@
     },
 
     "bluetooth": {
-      "format": " {status}",
+      "format-on": "󰂯",
+      "format-off": "󰂲 ",
       "format-connected": " {device_alias}",
       "format-connected-battery": " {device_alias} ({device_battery_percentage}%)",
       // "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
       "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
       "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
       "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-      "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
+      "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+      "on-click": "ghostty -e bluetui"
     }
   }

@@ -6,3 +6,6 @@ background-blur = true
 macos-icon=holographic
 bold-is-bright=true
 split-divider-color=#c6a0f6
+
+keybind = performable:ctrl+c=copy_to_clipboard
+keybind = ctrl+v=paste_from_clipboard

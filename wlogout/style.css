@@ -42,7 +42,7 @@ button {
 
 button:hover{
   background-color: @background-light;
-  border-bottom-width: 25px;
+  border-bottom-width: 15px;
   background-size: 62%;
 }
 

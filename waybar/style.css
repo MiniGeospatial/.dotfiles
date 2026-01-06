@@ -228,6 +228,8 @@ window#waybar {
     background-color: transparent;
     padding: 0 10px;
     margin: 0 2px;
+    color: @white;
+    border-bottom-color: @white;
 }
 
 #tray > .passive {

@@ -31,8 +31,8 @@
         "battery",
         "wireplumber",
         "bluetooth",
-        "network"
-        // "tray",
+        "network",
+        "tray"
     ],
 
 

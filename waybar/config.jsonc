@@ -8,11 +8,6 @@
     "height": 45,
     "spacing": 5,
 
-    // "margin-left": 10,
-    // "margin-bottom": 0,
-    // "margin-right": 10,
-
-
     "modules-left": [
         "custom/power",
         "hyprland/workspaces",
@@ -30,6 +25,7 @@
         "temperature",
         "battery",
         "wireplumber",
+        "custom/packages",
         "bluetooth",
         "network",
         "tray"
@@ -92,6 +88,15 @@
         "interval": 10
     },
 
+    "custom/packages": {
+      "format": "   {}",
+      "return-type": "json",
+      "interval": 300,
+      "exec": "~/.config/waybar/packages.sh",
+      "tooltip": true,
+      "on-click": "ghostty -e sudo pacman -Syu"
+    },
+
     "custom/weather": {
         "format": "{}",
         "interval": 3600,
@@ -135,7 +140,6 @@
         "calendar": {
           "mode": "month",
           "mode-mon-col": 3,
-          "weeks-pos": "right",
           "format": {
             "today": "<span color='#f7768e'><b>{}</b></span>"
           }

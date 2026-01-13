@@ -15,7 +15,7 @@
 
 /* Module-specific colors */
 @define-color workspaces-color @foreground;
-@define-color workspaces-focused-bg @green;
+@define-color workspaces-focused-bg @red;
 @define-color workspaces-focused-fg @orange;
 @define-color workspaces-urgent-bg @red;
 @define-color workspaces-urgent-fg @black;
@@ -45,6 +45,7 @@
 @define-color quote-color @green;
 @define-color idle-inhibitor-color @foreground;
 @define-color idle-inhibitor-active-color @red;
+@define-color packages-color @red;
 
 * {
     /* Base styling for all modules */
@@ -66,7 +67,8 @@ window#waybar {
 #mode, #mpd, #custom-weather, #custom-playerctl, #clock, #cpu,
 #memory, #temperature, #battery, #network, #wireplumber,
 #backlight, #disk, #custom-uptime, #custom-updates, #custom-quote,
-#idle_inhibitor, #tray, #custom-spotify, #custom-power, #bluetooth {
+#idle_inhibitor, #tray, #custom-spotify, #custom-power, #bluetooth,
+#custom-packages{
     padding: 0 10px;
     margin: 0 2px;
     border-bottom: 2px solid transparent;
@@ -82,8 +84,8 @@ window#waybar {
 }
 
 #workspaces button:hover {
-    background: @background-light;
-    box-shadow: inherit;
+    background: @background;
+    box-shadow: inset 0 -2px @workspaces-focused-bg;
 }
 
 #workspaces button.active {
@@ -106,6 +108,11 @@ window#waybar {
 #mpd {
     color: @mpd-color;
     border-bottom-color: @mpd-color;
+}
+
+#custom-packages {
+    color: @packages-color;
+    border-bottom-color: @packages-color;
 }
 
 #mpd.disconnected,

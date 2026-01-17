@@ -91,7 +91,7 @@
     "custom/packages": {
       "format": "   {}",
       "return-type": "json",
-      "interval": 300,
+      "interval": 3600,
       "exec": "~/.config/waybar/packages.sh",
       "tooltip": true,
       "on-click": "ghostty -e sudo pacman -Syu"

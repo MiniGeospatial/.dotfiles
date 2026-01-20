@@ -64,3 +64,5 @@ bindkey '^[[B' down-line-or-search
 export EDITOR="nvim"
 
 export PATH='/home/mike/.duckdb/cli/latest':$PATH
+
+[ -f .gcaliases ] && source .gcaliases

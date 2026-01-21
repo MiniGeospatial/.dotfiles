@@ -135,7 +135,7 @@
 
     "clock": {
         "format": "  {:%H:%M}",
-        "format-alt": "  {:%A %x}",
+        "format-alt": "  {:%a %d/%m/%Y}",
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "calendar": {
           "mode": "month",

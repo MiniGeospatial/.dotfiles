@@ -65,4 +65,4 @@ export EDITOR="nvim"
 
 export PATH='/home/mike/.duckdb/cli/latest':$PATH
 
-[ -f .gcaliases ] && source .gcaliases
+[ -f ~/.config/.secrets ] && source ~/.config/.secrets

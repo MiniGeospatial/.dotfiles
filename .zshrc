@@ -66,3 +66,9 @@ export EDITOR="nvim"
 export PATH='/home/mike/.duckdb/cli/latest':$PATH
 
 [ -f ~/.config/.secrets ] && source ~/.config/.secrets
+
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export QT_QPA_PLATFORMTHEME=kde

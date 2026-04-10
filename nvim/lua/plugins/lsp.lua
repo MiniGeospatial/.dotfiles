@@ -11,9 +11,7 @@ return {
     },
   },
   config = function()
-    require("lspconfig").lua_ls.setup {}
-    require("lspconfig").ruff.setup {}
-    require('lspconfig').pyright.setup {
+    vim.lsp.enable("pyright",{
       settings = {
         pyright = {
           disableOrganizeImports = true,
@@ -24,6 +22,9 @@ return {
           },
         },
       },
-    }
+    })
+    vim.lsp.enable("ruff")
+    vim.lsp.enable("lua_ls")
+
   end
 }

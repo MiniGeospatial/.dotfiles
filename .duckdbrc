@@ -8,6 +8,6 @@ LOAD httpfs;
 
 CREATE SECRET s3 (
   TYPE s3,
-  PROVIDER credential_chain,
-  REGION 'eu-west-2'
+  PROVIDER credential_chain
+  -- REGION 'eu-west-2'
 );

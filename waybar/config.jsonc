@@ -101,7 +101,8 @@
         "format": "{}",
         "interval": 3600,
         "exec": "curl -s 'https://wttr.in/?format=1'",
-        "exec-if": "ping wttr.in -c1"
+        "exec-if": "ping wttr.in -c1",
+        "max-length": 12
     },
 
     "custom/spotify": {

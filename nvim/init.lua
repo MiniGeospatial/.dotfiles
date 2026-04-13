@@ -34,23 +34,25 @@ vim.keymap.set("v", "<leader>Y", '"+Y')
 require("plugins.colors")
 vim.cmd.colorscheme("tokyonight-storm")
 
-require("plugins.brackets")
+require("plugins.lualine")
+
 require("plugins.oil")
+vim.keymap.set("n", "-", "<CMD>Oil --float<CR>", { desc = "Open parent directory" })
+
+require("plugins.emoji")
+vim.keymap.set("n", "<leader><leader>e", "<CMD>Smoji<CR>")
+
+require("plugins.neogit")
+vim.keymap.set("n", "<leader>ng", "<CMD>Neogit<CR>")
+
+require("plugins.brackets")
 require("plugins.treesitter")
 require("plugins.conform")
 require("plugins.lsp")
 require("plugins.blink")
-require("plugins.emoji")
 require("plugins.gitsigns")
-require("plugins.lualine")
-require("plugins.neogit")
 require("plugins.surround")
 require("plugins.telescope")
-
-vim.keymap.set("n", "-", "<CMD>Oil --float<CR>", { desc = "Open parent directory" })
-vim.keymap.set("n", "<leader><leader>e", "<CMD>Smoji<CR>")
-
-vim.keymap.set("n", "<leader>ng", "<CMD>Neogit<CR>")
 
 vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", {})
 vim.keymap.set("n", "<leader>fg", "<cmd>Telescope git_files<cr>", {})

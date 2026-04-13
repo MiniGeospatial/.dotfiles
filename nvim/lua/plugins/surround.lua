@@ -1,4 +1,4 @@
-return {
-  'tpope/vim-surround',
-  version = "*",
-}
+vim.pack.add({
+  'https://github.com/tpope/vim-surround',
+})
+

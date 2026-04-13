@@ -1,4 +1,3 @@
-return {
-  'cohama/lexima.vim',
-  version = "*"
-}
+vim.pack.add({{
+  src='https://github.com/cohama/lexima.vim',
+}})

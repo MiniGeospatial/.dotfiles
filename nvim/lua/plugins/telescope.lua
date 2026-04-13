@@ -1,5 +1,3 @@
-return {
-  'nvim-telescope/telescope.nvim',
-  version = "*",
-  dependencies = { 'nvim-lua/plenary.nvim' }
-}
+vim.pack.add({
+  'https://github.com/nvim-telescope/telescope.nvim',
+})

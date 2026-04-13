@@ -1,13 +1,14 @@
-return {
-  'nvim-lualine/lualine.nvim',
-  version = "*",
-  dependencies = { 'nvim-tree/nvim-web-devicons' },
-  opts = {
+vim.pack.add({
+  { src= 'https://github.com/nvim-lualine/lualine.nvim' },
+  { src= 'https://github.com/nvim-tree/nvim-web-devicons' }
+})
+
+require('lualine').setup({
     options = {
       theme = 'tokyonight-storm',
       icons_enabled = true,
       component_separators = { left = '>', right = '<' },
       section_separators = { left = '', right = '' },
     },
-  },
-}
+  }
+)

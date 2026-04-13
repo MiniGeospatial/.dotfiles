@@ -1,12 +1,10 @@
-return {
-  'saghen/blink.cmp',
-  dependencies = { 'rafamadriz/friendly-snippets' },
-  version = "*",
+vim.pack.add({
+  { src = 'https://github.com/saghen/blink.cmp' },
+  { src = 'https://github.com/rafamadriz/friendly-snippets' }
+})
 
-  ---@module 'blink.cmp'
-  ---@type blink.cmp.Config
-
-  opts = {
+require("blink.cmp").setup(
+  {
     keymap = {
       preset = 'enter',
       ['<S-Tab>'] = { 'select_prev', 'fallback' },
@@ -26,6 +24,5 @@ return {
         download = true,
       },
     },
-  },
-  opts_extend = { "sources.default" }
-}
+  }
+)

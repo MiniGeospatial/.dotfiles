@@ -1,18 +1,13 @@
 #!/bin/bash
 
-# Get updates, remove empty lines
 updates=$(checkupdates 2>/dev/null | grep -v '^$')
+count=$(printf '%s\n' "$updates" | grep -c '.')
 
-# Count updates safely
-count=$(printf "%s\n" "$updates" | grep -c '.')
-
-# Build tooltip (Waybar wants \r, not \n)
 if [ "$count" -eq 0 ]; then
     tooltip="All packages up to date!"
 else
-    tooltip=$(printf "%s" "$updates" | sed ':a;N;$!ba;s/\n/\r/g')
+    tooltip="$updates"
 fi
 
-# Emit valid JSON
-printf '{"text":"%s","tooltip":"%s"}\n' "$count" "$tooltip"
-
+jq -nc --arg text "$count" --arg tooltip "$tooltip" \
+    '{text: $text, tooltip: $tooltip}'

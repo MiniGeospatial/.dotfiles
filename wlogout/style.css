@@ -1,17 +1,16 @@
-/* Tokyo Night */
-@define-color background rgba(26, 27, 38, 0.8);
-@define-color background-light rgba(36, 40, 59, 0.8);
-@define-color foreground #c0caf5;
-@define-color black #15161e;
-@define-color red #f7768e;
-@define-color green #9ece6a;
-@define-color yellow #e0af68;
-@define-color blue #7aa2f7;
-@define-color magenta #bb9af7;
-@define-color cyan #7dcfff;
-@define-color white #a9b1d6;
-@define-color orange #ff9e64;
-
+/* Warm Burnout */
+@define-color background rgba(26, 21, 16, 0.8);
+@define-color background-light rgba(35, 33, 27, 0.8);
+@define-color foreground #bfbdb6;
+@define-color black #23211b;
+@define-color red #f06b73;
+@define-color green #70bf56;
+@define-color yellow #fdb04c;
+@define-color blue #4fbfff;
+@define-color magenta #d0a1ff;
+@define-color cyan #93e2c8;
+@define-color white #c7c7c7;
+@define-color orange #ff8f40;
 
 * {
 	background-image: none;
@@ -32,8 +31,8 @@ button {
   color: @foreground;
   text-shadow: none;
   transition: background-color 0.2s ease-in-out, border-bottom-width 0.2s ease-in-out, background-size 0.2s ease-in-out;
-  padding: 20 20px;
-  margin: 95 20px;
+  padding: 20px 20px;
+  margin: 95px 20px;
   border: none;
   border-bottom: 4px solid transparent;
   background-color: transparent;
